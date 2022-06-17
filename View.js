@@ -32,15 +32,13 @@ class showQuiz {
     });
   }
 
-  showResults(result) {
-    console.log(' 🥳 🎉 🎊🥳 🎉 🎊🥳 🎉 🎊', `\nПОЗДРАВЛЯЮ!\n
-ВИКТОРИНА ЗАКОНЧЕНА.`, ' 🥳 🎉 🎊🥳 🎉 🎊🥳 🎉 🎊');
-    console.log('👇', `\nТВОЙ РЕЗУЛЬТАТ: ${result} баллов!`, '💪💪💪💪💪💪💪💪💪💪');
-    readline.close();
-  }
+//   showResults(result) {
+// //     console.log(' 🥳 🎉 🎊🥳 🎉 🎊🥳 🎉 🎊', `\nПОЗДРАВЛЯЮ!\n
+// // ВИКТОРИНА ЗАКОНЧЕНА.`, ' 🥳 🎉 🎊🥳 🎉 🎊🥳 🎉 🎊');
+//     // console.log('👇', `\nТВОЙ РЕЗУЛЬТАТ: ${result} баллов!`, '💪💪💪💪💪💪💪💪💪💪');
+//     readline.close();
+//   }
 
-
-  
 }
 
 module.exports = View;

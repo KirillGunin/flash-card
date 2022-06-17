@@ -1,3 +1,4 @@
+const { rejects } = require('assert');
 const fs = require('fs');
 
 class Model {
@@ -17,7 +18,6 @@ class Model {
           // console.log(data);
         }
       })
-      
     })
   }
 
@@ -25,11 +25,38 @@ class Model {
     return word.split('_')[0]
   }
 
+  getFiles(fileNum) {
+    return new Promise((resolve, rejects) => {
+      for (let i = 0; i < this.arrThemes.length; i++){
+      fs.readFile(`${this.path}/${this.arrThemes[i]}${fileNum}`, 'utf-8', (error, files) => {
+        if(error) {
+          rejects('Не удалось прочить файлы')
+        } else {
+          // files = files.split('\n\n').map((el) => this.getQuestionAnswer(el))
+          resolve(files)
+        }
+
+      })
+    }
+    })
+  }
+
+  // getQuestionsAnswer(questions) {
+  //   return {
+  //     question: questions.split('\n')[0],
+  //     answer: questions.split('\n')[1],
+  //   }
+  // }
 
 }
 
-// const model = new Model ('./topics')
+
+const model = new Model ('./topics')
 // model.getThemes()
-//   .then((data)=> console.log(data))
+//   .then(result => console.log(result))
+
+model.getFiles('_flashcard_data.txt')
+  .then((data) => console.log(data))
+  .catch((err) => console.log(err))
 
 module.exports = Model

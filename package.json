@@ -1,0 +1,25 @@
+{
+  "name": "flash-cards",
+  "version": "1.0.0",
+  "description": "## Введение Вам предстоит создать приложение для флэш-карт, которое должно работать как показано на Рисунке 1. Сосредоточьтесь на написании элегантного, объектно-ориентированного кода, не забывая при этом о качественном проектировании и об отборе лучших методов.",
+  "main": "Controller.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rundomhaze/flash-cards.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rundomhaze/flash-cards/issues"
+  },
+  "homepage": "https://github.com/Rundomhaze/flash-cards#readme",
+  "devDependencies": {
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
+}

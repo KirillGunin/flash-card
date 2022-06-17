@@ -5,8 +5,8 @@ class Controller {
   }
 
   async run() {
-    const themesList = await this.model.getThemes()
-    let menu;
+    const listThemes = await this.model.getThemes()
+    let themesUsersChoosed;
     let numberOfMenu = 0;
 
     do {
@@ -15,26 +15,17 @@ class Controller {
         this.view.close()
         return
       }
-    } 
-    while ();
+    }
+    while (!this.checkThemes(listThemes, themesUsersChoosed))
+    const questions = await this.model.getQuestionsAnswer(themesUsersChoosed);
+    for (let arrQuestion of questions) {
+      let userAnswer = await this.view.getAnswer(arrQuestion.answer)
+    }
 
   }
-
-
-
-    // Просим экземпляр класса модели прочитать папку со всеми темами и составить меню.
-    // Попутно передаем метод контроллера this.printTopicsController,
-    // так как нам нужно отправить сформинованное меню на вывод в экземпляр класса view
-    // после того, как завершится асинхронная операция чтения папки
-    // Здесь this.printTopicsController — является callback'ом  
-    //this.model.readTopics(this.printTopicsController)
+  checkThemes(listThemes, themesUsersChoosed) {
+    return +themesUsersChoosed <= listThemes.length && +themesUsersChoosed > 0
   }
-
-// printTopicsController(topicsMenu) {
-//   // Тут нужно попросить экземпляр класса view вывести меню пользователю, 
-//   // а также дождаться ответа последнего
-// }
-
 
 }
 

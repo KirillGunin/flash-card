@@ -7,16 +7,16 @@ class showQuiz {
   getTopics(arrayOfTopics) {
     return new Promise((resolve) => {
       console.clear();
-      console.log('💖QUIZ WITH LOVE FROM ELBRUS💖');
-      console.log('LET\'S GO!');
+      console.log('         💖 QUIZ WITH LOVE FROM ELBRUS 💖');
+      console.log('                   LET\'S GO!');
       console.log('\n');
-      console.log('⏪1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣7️⃣8️⃣9️⃣🔟⏩');
+      console.log('       ⏪  1️⃣  2️⃣  3️⃣  4️⃣  5️⃣  6️⃣  7️⃣  8️⃣  9️⃣  🔟  ⏩');
       console.log('\n');
       console.log('Темы вопросов:');
 
       console.log(arrayOfTopics.map((topic, index) => `${index + 1}. ${topic}`).join('\n'));
 
-      readline.question('\nВыбери тему, затем введи число или напиши Отмена): ', (chosenTopic) => {
+      readline.question('\nВыбери тему, затем введи число или напиши Отмена: ', (chosenTopic) => {
         resolve(chosenTopic);
         // readline.close()
       });
@@ -53,20 +53,16 @@ class showQuiz {
         resolve(userAnswer);
       });
     });
-  }
+  };
 
   viewResult(userAnswer, correctAnswer) {
     if (userAnswer) {
-      console.log('🔥🔥🔥Это верный ответ! +100 баллов🔥🔥🔥');
+      console.log('🔥🔥🔥Это верный ответ! +10 баллов🔥🔥🔥');
     } else {
-      console.log('🤡🤡🤡Неверный ответ! -100 баллов🤡🤡🤡');
-      console.log(`\nПравильный ответ: ${rightAnswer}`);
+      console.log('🤡🤡🤡Неверный ответ! -10 баллов🤡🤡🤡');
+      console.log(`\nПравильный ответ: ${correctAnswer}`);
     }
-    return new Promise((resolve) => {
-      readline.question('\n😃😃😃Хотите сыграть еще? Введите ДА если согласны: 😃😃😃\n\n', (user_answer) => {
-        resolve(user_answer);
-      });
-    });
+   
   }
 
   viewClose() {
